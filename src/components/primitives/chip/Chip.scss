@@ -1,0 +1,28 @@
+@import "src/styles/constants";
+
+.chip-container {
+  width: fit-content;
+  align-items: center;
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: $border-radius-round;
+  background-color: rgba($text-color, 0.15);
+  padding-left: $spacing-xs;
+
+  .chip-label, .chip-value {
+    padding: $spacing-s;
+    font-weight: 600;
+    box-sizing: border-box;
+  }
+
+  .chip-label {
+    font-size: $font-xs;
+    background-color: $text-color;
+    color: $secondary-text-color;
+    border-radius: $border-radius-round;
+  }
+
+  .chip-value {
+    font-size: $font-s;
+  }
+}
