@@ -3,6 +3,7 @@ $font-s: 0.875rem;
 $font-m: 1rem;
 $font-l: 1.125rem;
 $font-xl: 1.5rem;
+$font-xxl: 2.5rem;
 
 $spacing-xs: 5px;
 $spacing-s: 10px;
@@ -10,9 +11,9 @@ $spacing-m: 15px;
 $spacing-l: 20px;
 $spacing-xl: 30px;
 
-$bg-color-light: #ffdd7e;
-$bg-color: #ffb800;
-$bg-color-dark: #d59a00;
+$bg-color: #231e25;
+$bg-color-light: lighten($bg-color, 20%);
+$bg-color-dark: darken($bg-color, 20%);
 
 $text-color: #222;
 $secondary-text-color: #fff;
@@ -26,6 +27,7 @@ $sm-breakpoint: 576px;
 $max-content-width: 1200px;
 
 $tile-shadow: 0px 3px 10px 3px $bg-color-dark;
+$header-shadow: 0px 10px 10px 0px rgba($bg-color-dark, 0.15);
 
 $border-radius-outer: 10px;
 $border-radius-inner: 5px;
