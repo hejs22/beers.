@@ -29,9 +29,19 @@ const PageSelector = ({ hasNextPage }: PageSelectorProps) => {
 
   return (
     <div className="page-selector-container">
-      <IconButton disabled={!canDecrement()} icon={faAngleLeft} onClick={decrementPage} />
+      <IconButton
+        aria-label="Show previous page"
+        disabled={!canDecrement()}
+        icon={faAngleLeft}
+        onClick={decrementPage}
+      />
       <div className="current-page">{page}</div>
-      <IconButton disabled={!canIncrement()} icon={faAngleRight} onClick={incrementPage} />
+      <IconButton
+        aria-label="Show next page"
+        disabled={!canIncrement()}
+        icon={faAngleRight}
+        onClick={incrementPage}
+      />
     </div>
   );
 };

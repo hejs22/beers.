@@ -30,6 +30,7 @@ const HomePage = () => {
           )
           .build()}
       </div>
+      <PageSelector hasNextPage={!!nextData?.length} />
     </div>
   );
 };

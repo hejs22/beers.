@@ -23,6 +23,7 @@ const BeerTile = ({ beer }: BeerTileProps) => {
         icon={faArrowRight}
         onClick={redirectToDetailsPage}
         className="see-details-button"
+        aria-label="Check beer details"
       />
       <div className="beer-picture-container">
         <div className="backdrop-text">{beer.name}</div>
