@@ -14,7 +14,7 @@ export const useBeer = () => {
     return { data: undefined, status: 'error' };
   }
 
-  const { data, status } = useQuery('BEER_QUERY_KEY', () => fetchBeer(id), {
+  const { data, status } = useQuery(['BEER_QUERY_KEY', id], () => fetchBeer(id), {
     enabled: !beerDetails
   });
 

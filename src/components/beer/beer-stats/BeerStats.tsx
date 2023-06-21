@@ -31,8 +31,8 @@ const BeerStats = ({ abv, ibu, className }: BeerStatsProps) => {
 
     return (
       <div className={`beer-stats-container ${className ? className : ''}`}>
-        <Chip label="ABV" className={abvRange} value={abv} />
-        <Chip label="IBU" className={ibuRange} value={ibu} />
+        {abv !== null && <Chip label="ABV" className={abvRange} value={abv} />}
+        {ibu !== null && <Chip label="IBU" className={ibuRange} value={ibu} />}
       </div>
     );
   };

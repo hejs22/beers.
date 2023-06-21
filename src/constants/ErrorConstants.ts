@@ -14,6 +14,6 @@ export class ErrorNoData {
 
 export class ErrorDataEmpty {
   static header = 'Nothing to show!';
-  static caption = 'Not even one beer left. We are on our way to brew more.!';
+  static caption = 'Not even one beer left. We are on our way to brew more!';
   static imageSrc = DATA_EMPTY_SRC;
 }
