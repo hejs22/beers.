@@ -6,9 +6,10 @@ const HomePage = () => {
   const { data, status } = useBeers(1);
 
   return (
-    <div>
+    <div className="home-page-container">
       {Builder.createResult(status)
-        .onSuccess(<BeersList beers={data!} />)
+        .onSuccess(<BeersList beers={data} />)
+        .onLoading(<BeersList beers={data} />)
         .build()}
     </div>
   );

@@ -1,8 +1,9 @@
 @import "src/styles/constants";
+@import "src/styles/mixins";
 
 .beers-list-container {
   display: grid;
-  grid-gap: $spacing-xl;
+  grid-gap: $spacing-xl $spacing-l;
   grid-template-columns: repeat(4, 1fr);
   max-width: $max-content-width;
   padding: $spacing-m;
@@ -11,9 +12,15 @@
 
   @media (max-width: $lg-breakpoint) {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: $spacing-s;
   }
 
   @media (max-width: $sm-breakpoint) {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .skeleton {
+    @include skeleton();
+    height: 400px;
   }
 }

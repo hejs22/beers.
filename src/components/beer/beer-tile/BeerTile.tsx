@@ -1,11 +1,10 @@
 import { ComponentProps } from 'react';
 import Beer from '../../../helpers/interfaces/Beer.interface';
 import './BeerTile.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import appRouter from '../../../router/AppRouter';
 import { ROUTE } from '../../../constants/RouteConstants';
-import Chip from '../../primitives/chip/Chip';
+import IconButton from '../../primitives/button/IconButton';
 
 interface BeerTileProps extends ComponentProps<'div'> {
   beer: Beer;
@@ -13,17 +12,20 @@ interface BeerTileProps extends ComponentProps<'div'> {
 
 const BeerTile = ({ beer }: BeerTileProps) => {
   const redirectToDetailsPage = () => {
-    appRouter.navigate(ROUTE.DETAILS.replace(':id', beer.id.toString()));
+    appRouter.navigate(ROUTE.DETAILS.replace(':id', beer.id.toString()), {
+      state: { beerDetails: beer }
+    });
   };
 
   return (
     <div className="beer-tile-container">
-      <FontAwesomeIcon
+      <IconButton
+        icon={faArrowRight}
         onClick={redirectToDetailsPage}
         className="see-details-button"
-        icon={faArrowRight}
       />
       <div className="beer-picture-container">
+        <div className="backdrop-text">{beer.name}</div>
         <img
           src={beer.image_url}
           className="beer-picture"
@@ -34,10 +36,6 @@ const BeerTile = ({ beer }: BeerTileProps) => {
       <div className="beer-info">
         <div className="beer-name">{beer.name}</div>
         <div className="beer-tagline">{beer.tagline}</div>
-      </div>
-      <div className="beer-stats">
-        <Chip label="ABV" value={beer.abv} />
-        <Chip label="IBU" value={beer.ibu} />
       </div>
     </div>
   );

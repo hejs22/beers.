@@ -1,5 +1,53 @@
+@import "src/styles/constants";
+
+@mixin page-container {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-m;
+  box-sizing: border-box;
+  min-height: calc(100vh - #{$navbar-height});
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 @mixin box-shadow($shadow) {
   -webkit-box-shadow: $shadow;
   -moz-box-shadow: $shadow;
   box-shadow: $shadow;
+}
+
+@mixin tile {
+  align-items: center;
+  box-sizing: border-box;
+  background-color: $tile-color;
+  border-radius: $border-radius-outer;
+  text-align: center;
+  position: relative;
+  padding: $spacing-s;
+  @include box-shadow($tile-shadow);
+}
+
+@mixin floating-button {
+  position: absolute;
+  box-sizing: border-box;
+  z-index: $top-layer;
+  transition: 0.3s background-color, 0.3s color;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $tile-color;
+  }
+}
+
+@mixin skeleton {
+  @include tile();
+  animation: blink-animation 2.5s infinite;
+
+  &:nth-child(2n) {
+    animation-delay: 0.5s;
+  }
+
+  &:nth-child(3n) {
+    animation-delay: 0.25s;
+  }
 }

@@ -1,0 +1,6 @@
+@import "src/styles/constants";
+
+.beer-stats-container {
+  display: flex;
+  gap: $spacing-s;
+}

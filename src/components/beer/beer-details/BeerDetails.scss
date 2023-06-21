@@ -1,0 +1,107 @@
+@import "src/styles/constants";
+@import "src/styles/mixins";
+
+.beer-details-container {
+  margin: 0 auto;
+  @include tile();
+  display: grid;
+  grid-column-gap: $spacing-m;
+  grid-template-columns: 1fr 2fr;
+  max-width: min($max-content-width, 100%);
+
+  @media (max-width: $lg-breakpoint) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: $sm-breakpoint) {
+    grid-template-columns: 1fr;
+  }
+
+  .go-back-button {
+    @include floating-button();
+    left: $spacing-m;
+    top: $spacing-m;
+    font-size: $font-xxl;
+    padding: $spacing-s $spacing-m;
+  }
+
+  .beer-picture-container {
+    position: relative;
+    padding: $spacing-xl 0;
+
+    .circle-background {
+      background: linear-gradient(45deg, $accent-color-light 0%, $accent-color-dark 100%);
+      z-index: $bottom-layer;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 90%;
+      max-width: 300px;
+      aspect-ratio: 1;
+      border-radius: $border-radius-round;
+      filter: blur(1px);
+    }
+
+    .beer-picture {
+      position: relative;
+      z-index: $middle-layer;
+      max-height: 50vh;
+      max-width: 100%;
+    }
+  }
+
+  .beer-details {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: $spacing-l $spacing-m;
+    box-sizing: border-box;
+    gap: $spacing-m;
+    text-align: left;
+
+    .details-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: $spacing-l;
+      margin-bottom: $spacing-m;
+
+      .header-text {
+        font-weight: 900;
+
+        &.beer-name {
+          color: $accent-color;
+          font-size: $font-xxxl;
+          line-height: 95%;
+        }
+
+        &.beer-tagline {
+          margin-bottom: $spacing-s;
+          text-transform: uppercase;
+          opacity: 0.5;
+        }
+      }
+
+      .beer-stats {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
+
+    .details-text {
+      font-size: $font-s;
+
+      &.beer-tips {
+        font-style: italic;
+      }
+
+      &.beer-description {
+        text-align: justify;
+      }
+    }
+  }
+}

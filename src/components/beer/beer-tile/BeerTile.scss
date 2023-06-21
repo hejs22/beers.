@@ -3,16 +3,9 @@
 
 .beer-tile-container {
   display: inline-flex;
-  align-items: center;
   flex-direction: column;
-  padding: $spacing-s;
-  box-sizing: border-box;
+  @include tile();
   gap: $spacing-s;
-  background-color: $tile-color;
-  border-radius: $border-radius-outer;
-  text-align: center;
-  position: relative;
-  @include box-shadow($tile-shadow);
 
   &:hover {
     .beer-picture-container {
@@ -23,60 +16,60 @@
   }
 
   .see-details-button {
-    position: absolute;
+    @include floating-button();
     right: $spacing-m;
     top: $spacing-m;
-    box-sizing: border-box;
-    padding: $spacing-m;
-    background-color: $tile-color;
-    border-radius: $border-radius-inner;
-    transition: 0.3s background-color, 0.3s color;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $bg-color;
-      color: $tile-color;
-    }
   }
 
   .beer-picture-container {
+    background-color: rgba($primary-color-dark, 0.15);
+    position: relative;
+    box-sizing: border-box;
     height: 300px;
     width: 100%;
     padding: $spacing-s;
-    box-sizing: border-box;
     border-radius: $border-radius-inner;
-    background-color: rgba($text-color, 0.15);
-    border-bottom: 10px solid $bg-color-light;
     overflow: hidden;
 
+    .backdrop-text {
+      position: absolute;
+      width: 100%;
+      left: $spacing-s;
+      top: $spacing-s;
+      z-index: $bottom-layer;
+      writing-mode: vertical-lr;
+      white-space: nowrap;
+      user-select: none;
+      opacity: 0.075;
+      font-weight: 900;
+      font-size: $font-xxl;
+    }
+
     .beer-picture {
+      position: relative;
       height: 100%;
+      z-index: $middle-layer;
       transition: 0.3s transform;
     }
   }
 
-  .beer-stats {
-    display: flex;
-    gap: $spacing-s;
-  }
-
   .beer-info {
-    flex-grow: 1;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     justify-content: center;
     padding: $spacing-s;
     box-sizing: border-box;
-    width: 100%;
     border-radius: $border-radius-inner;
 
     .beer-name {
       font-size: $font-l;
-      font-weight: bold;
+      font-weight: 900;
     }
 
     .beer-tagline {
       font-size: $font-s;
+      font-style: italic;
     }
   }
 }

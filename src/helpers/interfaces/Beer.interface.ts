@@ -20,5 +20,5 @@ export default interface Beer {
   boil_volume: Amount;
   ingredients: BeerIngredients;
   food_pairing: string[];
-  brewer_tips: string;
+  brewers_tips: string;
 }
