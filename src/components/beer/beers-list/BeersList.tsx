@@ -2,6 +2,9 @@ import { ComponentProps, ReactElement } from 'react';
 import Beer from '../../../helpers/interfaces/Beer.interface';
 import BeerTile from '../beer-tile/BeerTile';
 import './BeersList.scss';
+import ErrorMessage from '../../error-message/ErrorMessage';
+import { ErrorDataEmpty } from '../../../constants/ErrorConstants';
+import { DEFAULT_PAGE_SIZE } from '../../../config/ApiConfig';
 
 interface BeersContainerProps extends ComponentProps<'div'> {
   beers?: Beer[];
@@ -10,24 +13,33 @@ interface BeersContainerProps extends ComponentProps<'div'> {
 const BeersList = ({ beers }: BeersContainerProps) => {
   const buildSkeletons = () => {
     const skeletons: ReactElement[] = [];
-    const maxSkeletons = 12;
 
-    for (let count = 0; count < maxSkeletons; count++) {
+    for (let count = 0; count < DEFAULT_PAGE_SIZE; count++) {
       skeletons.push(<div className="skeleton" />);
     }
 
     return skeletons;
   };
 
-  const buildBeerTiles = () => {
+  const buildBeersList = () => {
     if (beers) {
-      return beers.map((beer) => <BeerTile key={beer.id} beer={beer} />);
+      if (beers.length) {
+        return beers.map((beer) => <BeerTile key={beer.id} beer={beer} />);
+      } else {
+        return (
+          <ErrorMessage
+            header={ErrorDataEmpty.header}
+            caption={ErrorDataEmpty.caption}
+            imageSrc={ErrorDataEmpty.imageSrc}
+          />
+        );
+      }
     } else {
       return buildSkeletons();
     }
   };
 
-  return <div className="beers-list-container">{buildBeerTiles()}</div>;
+  return <div className="beers-list-container">{buildBeersList()}</div>;
 };
 
 export default BeersList;

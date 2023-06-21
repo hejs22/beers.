@@ -19,10 +19,10 @@ const AppRouter = createBrowserRouter([
       {
         path: ROUTE.DETAILS,
         element: <BeerDetailsPage />
-      }
+      },
+      { path: '*', element: <NotFoundPage /> }
     ]
-  },
-  { path: '*', element: <NotFoundPage /> }
+  }
 ]);
 
 export default AppRouter;

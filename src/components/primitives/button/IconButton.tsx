@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './IconButton.scss';
+import Button from './Button';
 
 interface IconButtonProps extends ComponentProps<'button'> {
   icon: IconDefinition;
@@ -9,9 +9,9 @@ interface IconButtonProps extends ComponentProps<'button'> {
 
 const IconButton = ({ icon, className, onClick }: IconButtonProps) => {
   return (
-    <button className={`icon-button-container ${className ? className : ''}`} onClick={onClick}>
+    <Button className={`button-container ${className ? className : ''}`} onClick={onClick}>
       <FontAwesomeIcon icon={icon} />
-    </button>
+    </Button>
   );
 };
 

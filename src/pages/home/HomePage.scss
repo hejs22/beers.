@@ -1,0 +1,10 @@
+@import "src/styles/mixins";
+
+.home-page-container {
+  @include page-container;
+
+  .home-page {
+    width: 100%;
+    margin: auto 0;
+  }
+}

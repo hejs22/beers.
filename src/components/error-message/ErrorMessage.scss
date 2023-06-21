@@ -1,0 +1,50 @@
+@import "src/styles/constants";
+
+.error-message-container {
+  display: grid;
+  align-items: center;
+  margin: auto;
+  column-gap: $spacing-l;
+  grid-template-columns: 1fr 1fr;
+  width: fit-content;
+
+  @media (max-width: $lg-breakpoint) {
+    grid-template-columns: 1fr;
+  }
+
+  .error-image-container {
+    margin: 0 auto;
+
+    .error-image {
+      max-width: 50vw;
+      height: 50vh;
+    }
+  }
+
+  .error-text {
+    color: $secondary-text-color;
+
+    &.error-header {
+      font-weight: 900;
+      font-size: $font-xxl;
+    }
+
+    &.error-caption {
+
+    }
+  }
+
+  .action-button {
+    background-color: $accent-color;
+    font-size: $font-l;
+    font-weight: bold;
+    margin-top: $spacing-m;
+    color: $secondary-text-color;
+    width: 100%;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: $accent-color-dark;
+    }
+  }
+}
