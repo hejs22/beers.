@@ -40,16 +40,16 @@ Uruchamia napisane testy jednostkowe (jest ich kilka, chciałem pokazać swój k
 # Galeria
 
 Główny widok aplikacji
-![HomePage.png](..%2F..%2FHomePage.png)
+![HomePage.png](github/HomePage.png)
 
 Informacje o danym piwie
-![BeerDetails.png](..%2F..%2FBeerDetails.png)
+![BeerDetails.png](github/BeerDetails.png)
 
 Widok dla ludzi robiących literówki w adresie url
-![404Page.png](..%2F..%2F404Page.png)
+![404Page.png](github/404Page.png)
 
 Widok dla tych, co próbują wyszukiwać informacji o piwie, które nie istnieje
-![NotFound.png](..%2F..%2FNotFound.png)
+![NotFound.png](github/NotFound.png)
 
 # Wersja live
 
