@@ -2,12 +2,12 @@ import { ComponentProps } from 'react';
 import './Button.scss';
 import classNames from 'classnames';
 
-const Button = ({ children, className, onClick, disabled }: ComponentProps<'button'>) => {
+const Button = ({ children, className, ...props }: ComponentProps<'button'>) => {
   return (
     <button
-      disabled={disabled}
-      className={classNames('button-container', className, { disabled: disabled })}
-      onClick={onClick}>
+      {...props}
+      disabled={props.disabled}
+      className={classNames('button-container', className, { disabled: props.disabled })}>
       {children}
     </button>
   );

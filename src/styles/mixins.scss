@@ -41,7 +41,7 @@
 }
 
 @mixin skeleton {
-  @include tile();
+  @include tile;
   animation: blink-animation 2.5s infinite;
 
   &:nth-child(2n) {
