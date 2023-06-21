@@ -5,6 +5,7 @@
   display: inline-flex;
   flex-direction: column;
   @include tile;
+  cursor: pointer;
   gap: $spacing-s;
 
   &:hover {

@@ -1,10 +1,8 @@
 import { ComponentProps } from 'react';
 import Beer from 'shared/interfaces/Beer.interface';
 import './BeerTile.scss';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import appRouter from 'router/AppRouter';
 import { ROUTE } from 'shared/constants/RouteConstants';
-import IconButton from 'components/primitives/button/IconButton';
 
 interface BeerTileProps extends ComponentProps<'div'> {
   beer: Beer;
@@ -18,14 +16,7 @@ const BeerTile = ({ beer }: BeerTileProps) => {
   };
 
   return (
-    <div className="beer-tile-container">
-      <IconButton
-        icon={faArrowRight}
-        onClick={redirectToDetailsPage}
-        className="see-details-button"
-        aria-label="Check beer details"
-      />
-
+    <div className="beer-tile-container" onClick={redirectToDetailsPage}>
       <div className="beer-picture-container">
         <div className="backdrop-text">{beer.name}</div>
         <img
