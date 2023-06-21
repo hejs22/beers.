@@ -25,6 +25,7 @@ const BeerTile = ({ beer }: BeerTileProps) => {
         className="see-details-button"
         aria-label="Check beer details"
       />
+
       <div className="beer-picture-container">
         <div className="backdrop-text">{beer.name}</div>
         <img
@@ -34,6 +35,7 @@ const BeerTile = ({ beer }: BeerTileProps) => {
           loading="lazy"
         />
       </div>
+
       <div className="beer-info">
         <div className="beer-name">{beer.name}</div>
         <div className="beer-tagline">{beer.tagline}</div>

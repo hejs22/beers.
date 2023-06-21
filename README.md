@@ -1,46 +1,57 @@
-# Getting Started with Create React App
+# ExLabs - zadanie rekrutacyjne
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Wymagania
+- Kiedy ładuje się treść, użytkownik powinien być tego świadomy (wyświetl spinner lub skeleton loader) - ✓
+- Aplikacja powinna być responsywna i działać na urządzeniach mobilnych - ✓
+- Podstrona z konkretnym piwem powinna być dostępna również poprzez URL np. `/details/:beerId` - ✓
+- Na stronie głównej piwa powinny zawierać minimum informacje takie jak zdjęcie, nazwa piwa oraz tagline (są to dane z API) - ✓
+- Dedykowana podstrona z piwem powinna zawierać minimum informacje takie jak zdjęcie, nazwa piwa, tagline, description, abv, ibu, ingredients (są to dane z API) - ✓
+- Powinniśmy móc uruchomić aplikację poprzez komendę `npm install && npm start` - ✓
 
-## Available Scripts
 
-In the project directory, you can run:
+## Od siebie dorzuciłem
+- Prefetchowanie danych z api.
+- Zabezpieczenie routera, obsłużenie `404 - Page not found`.
+- Obsługę błędów przy fetchowaniu danych (a także obsługę sytuacji, w której zostanie pobrana pusta tablica).
+- Kilka testów, które w małym stopniu mogą zobrazować w jaki sposób je piszę.
+- Konfigurację środowiska (linter, ładniejsze importy, itd.)
+- Czytelny kod :)
+
+
+## Dostępne skrypty
+
+### `npm install`
+
+Instaluje wszystko co potrzebne.
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Standardowo uruchamia aplikację w środowisku deweloperskim.\
+Po uruchomieniu dostępna jest pod adresem [http://localhost:3000](http://localhost:3000).
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Buduje aplikację i zapisuje do folderu `build`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run cypress:component`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Uruchamia napisane testy jednostkowe (jest ich kilka, chciałem pokazać swój koncept pisania testów oparty na wzorcu Page Objects).
 
-### `npm run eject`
+# Galeria
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Główny widok aplikacji
+![HomePage.png](..%2F..%2FHomePage.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Informacje o danym piwie
+![BeerDetails.png](..%2F..%2FBeerDetails.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Widok dla ludzi robiących literówki w adresie url
+![404Page.png](..%2F..%2F404Page.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Widok dla tych, co próbują wyszukiwać informacji o piwie, które nie istnieje
+![NotFound.png](..%2F..%2FNotFound.png)
 
-## Learn More
+# Wersja live
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://hcywka-beers.netlify.app \
+Miłego przeglądania i do usłyszenia :)
