@@ -1,0 +1,19 @@
+@import "src/styles/constants";
+
+.page-selector-container {
+  margin: $spacing-m auto $spacing-s;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: $spacing-l;
+  background-color: $primary-color-light;
+  border-radius: $border-radius-inner;
+
+  .current-page {
+    color: $secondary-text-color;
+    width: $font-xxl;
+    text-align: center;
+    font-size: $font-xl;
+    font-weight: 900;
+  }
+}

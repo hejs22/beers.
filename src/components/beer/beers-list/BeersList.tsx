@@ -5,6 +5,7 @@ import './BeersList.scss';
 import ErrorMessage from '../../error-message/ErrorMessage';
 import { ErrorDataEmpty } from '../../../constants/ErrorConstants';
 import { DEFAULT_PAGE_SIZE } from '../../../config/ApiConfig';
+import Builder from '../../../helpers/utils/Builder';
 
 interface BeersContainerProps extends ComponentProps<'div'> {
   beers?: Beer[];
@@ -21,25 +22,33 @@ const BeersList = ({ beers }: BeersContainerProps) => {
     return skeletons;
   };
 
-  const buildBeersList = () => {
-    if (beers) {
-      if (beers.length) {
-        return beers.map((beer) => <BeerTile key={beer.id} beer={beer} />);
-      } else {
-        return (
-          <ErrorMessage
-            header={ErrorDataEmpty.header}
-            caption={ErrorDataEmpty.caption}
-            imageSrc={ErrorDataEmpty.imageSrc}
-          />
-        );
-      }
+  const mapBooleanToStatus = (): 'success' | 'loading' | 'error' => {
+    if (!beers) {
+      return 'loading';
+    } else if (beers.length) {
+      return 'success';
     } else {
-      return buildSkeletons();
+      return 'error';
     }
   };
 
-  return <div className="beers-list-container">{buildBeersList()}</div>;
+  const buildBeerTiles = () => {
+    if (beers) {
+      return beers.map((beer) => <BeerTile key={beer.id} beer={beer} />);
+    }
+  };
+
+  return Builder.createResult(mapBooleanToStatus())
+    .onLoading(<div className="beers-list-container">{buildSkeletons()}</div>)
+    .onSuccess(<div className="beers-list-container">{buildBeerTiles()}</div>)
+    .onError(
+      <ErrorMessage
+        header={ErrorDataEmpty.header}
+        caption={ErrorDataEmpty.caption}
+        imageSrc={ErrorDataEmpty.imageSrc}
+      />
+    )
+    .build();
 };
 
 export default BeersList;

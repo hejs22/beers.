@@ -4,12 +4,18 @@ import Builder from '../../helpers/utils/Builder';
 import ErrorMessage from '../../components/error-message/ErrorMessage';
 import { ErrorNoData } from '../../constants/ErrorConstants';
 import './HomePage.scss';
+import { useContext } from 'react';
+import { SelectedPageContext } from '../../contexts/SelectedPageContext';
+import PageSelector from '../../components/page-selector/PageSelector';
 
 const HomePage = () => {
-  const { data, status, refetch } = useBeers(1);
+  const { page } = useContext(SelectedPageContext);
+  const { data, status, refetch } = useBeers(page);
+  const { data: nextData } = useBeers(page + 1);
 
   return (
     <div className="home-page-container">
+      <PageSelector hasNextPage={!!nextData?.length} />
       <div className="home-page">
         {Builder.createResult(status)
           .onSuccess(<BeersList beers={data} />)

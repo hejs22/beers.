@@ -1,9 +1,12 @@
 import { ComponentProps } from 'react';
 import './Button.scss';
 
-const Button = ({ children, className, onClick }: ComponentProps<'button'>) => {
+const Button = ({ children, className, onClick, disabled }: ComponentProps<'button'>) => {
   return (
-    <button className={`button-container ${className ? className : ''}`} onClick={onClick}>
+    <button
+      disabled={disabled}
+      className={`button-container ${className ? className : ''} ${disabled ? 'disabled' : ''}`}
+      onClick={onClick}>
       {children}
     </button>
   );

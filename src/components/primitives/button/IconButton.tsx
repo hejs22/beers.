@@ -7,9 +7,12 @@ interface IconButtonProps extends ComponentProps<'button'> {
   icon: IconDefinition;
 }
 
-const IconButton = ({ icon, className, onClick }: IconButtonProps) => {
+const IconButton = ({ icon, className, onClick, disabled }: IconButtonProps) => {
   return (
-    <Button className={`button-container ${className ? className : ''}`} onClick={onClick}>
+    <Button
+      disabled={disabled}
+      className={`button-container ${className ? className : ''}`}
+      onClick={onClick}>
       <FontAwesomeIcon icon={icon} />
     </Button>
   );

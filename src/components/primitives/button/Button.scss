@@ -6,4 +6,8 @@
   padding: $spacing-m;
   background-color: $tile-color;
   border-radius: $border-radius-inner;
+
+  &.disabled {
+    cursor: auto;
+  }
 }
