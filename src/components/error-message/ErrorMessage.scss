@@ -1,12 +1,12 @@
 @import "src/styles/constants";
 
 .error-message-container {
+  margin: auto;
+  width: fit-content;
   display: grid;
   align-items: center;
-  margin: auto;
   column-gap: $spacing-l;
   grid-template-columns: 1fr 1fr;
-  width: fit-content;
 
   @media (max-width: $lg-breakpoint) {
     grid-template-columns: 1fr;
@@ -28,19 +28,15 @@
       font-weight: 900;
       font-size: $font-xxl;
     }
-
-    &.error-caption {
-
-    }
   }
 
   .action-button {
+    width: 100%;
+    margin-top: $spacing-m;
     background-color: $accent-color;
+    color: $secondary-text-color;
     font-size: $font-l;
     font-weight: bold;
-    margin-top: $spacing-m;
-    color: $secondary-text-color;
-    width: 100%;
     transition: background-color 0.2s;
 
     &:hover {

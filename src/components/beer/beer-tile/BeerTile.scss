@@ -4,7 +4,7 @@
 .beer-tile-container {
   display: inline-flex;
   flex-direction: column;
-  @include tile();
+  @include tile;
   gap: $spacing-s;
 
   &:hover {
@@ -16,7 +16,7 @@
   }
 
   .see-details-button {
-    @include floating-button();
+    @include floating-button;
     right: $spacing-m;
     top: $spacing-m;
   }

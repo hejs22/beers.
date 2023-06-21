@@ -1,12 +1,12 @@
-import { useBeers } from '../../helpers/hooks/useBeers';
-import BeersList from '../../components/beer/beers-list/BeersList';
-import Builder from '../../helpers/utils/Builder';
-import ErrorMessage from '../../components/error-message/ErrorMessage';
-import { ErrorNoData } from '../../constants/ErrorConstants';
+import { useBeers } from 'shared/hooks/useBeers';
+import BeersList from 'components/beer/beers-list/BeersList';
+import Builder from 'shared/utils/Builder';
+import ErrorMessage from 'components/error-message/ErrorMessage';
+import { ErrorNoData } from 'shared/constants/ErrorConstants';
 import './HomePage.scss';
 import { useContext } from 'react';
-import { SelectedPageContext } from '../../contexts/SelectedPageContext';
-import PageSelector from '../../components/page-selector/PageSelector';
+import { SelectedPageContext } from 'shared/contexts/SelectedPageContext';
+import PageSelector from 'components/page-selector/PageSelector';
 
 const HomePage = () => {
   const { page } = useContext(SelectedPageContext);

@@ -1,5 +1,5 @@
 import { apiClient } from './ApiClient';
-import Beer from '../helpers/interfaces/Beer.interface';
+import Beer from 'shared/interfaces/Beer.interface';
 import ServicesValidation from './ServicesValidator';
 
 export const fetchBeers = async (page: number, perPage: number): Promise<Beer[]> => {

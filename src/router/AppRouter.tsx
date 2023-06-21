@@ -1,9 +1,9 @@
 import { createBrowserRouter, Outlet } from 'react-router-dom';
-import { ROUTE } from '../constants/RouteConstants';
-import HomePage from '../pages/home/HomePage';
-import { BeerDetailsPage } from '../pages/beer-details/BeerDetailsPage';
-import NotFoundPage from '../pages/error/NotFoundPage';
-import Navbar from '../components/navbar/Navbar';
+import { ROUTE } from 'shared/constants/RouteConstants';
+import Navbar from 'components/navbar/Navbar';
+import HomePage from 'pages/home/HomePage';
+import { BeerDetailsPage } from 'pages/beer-details/BeerDetailsPage';
+import NotFoundPage from 'pages/error/NotFoundPage';
 
 const AppRouter = createBrowserRouter([
   {

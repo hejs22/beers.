@@ -1,6 +1,6 @@
 import './Navbar.scss';
 import { useEffect, useState } from 'react';
-import { useScrollDirection } from '../../helpers/hooks/useScrollPosition';
+import { useScrollDirection } from 'shared/hooks/useScrollPosition';
 
 const HEADER_COLLAPSE_THRESHOLD = 75;
 

@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
-import { fetchBeer } from '../../services/BeerService';
-import appRouter from '../../router/AppRouter';
+import { fetchBeer } from 'services/BeerService';
+import appRouter from 'router/AppRouter';
 import { useParams } from 'react-router-dom';
 
 export const useBeer = () => {

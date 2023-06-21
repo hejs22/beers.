@@ -1,11 +1,11 @@
 import { ComponentProps, ReactElement } from 'react';
-import Beer from '../../../helpers/interfaces/Beer.interface';
-import BeerTile from '../beer-tile/BeerTile';
+import Beer from 'shared/interfaces/Beer.interface';
+import BeerTile from 'components/beer/beer-tile/BeerTile';
 import './BeersList.scss';
-import ErrorMessage from '../../error-message/ErrorMessage';
-import { ErrorDataEmpty } from '../../../constants/ErrorConstants';
-import { DEFAULT_PAGE_SIZE } from '../../../config/ApiConfig';
-import Builder from '../../../helpers/utils/Builder';
+import ErrorMessage from 'components/error-message/ErrorMessage';
+import { ErrorDataEmpty } from 'shared/constants/ErrorConstants';
+import { DEFAULT_PAGE_SIZE } from 'shared/config/ApiConfig';
+import Builder from 'shared/utils/Builder';
 
 interface BeersContainerProps extends ComponentProps<'div'> {
   beers?: Beer[];

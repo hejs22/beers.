@@ -1,7 +1,8 @@
 import { ComponentProps } from 'react';
-import Chip from '../../primitives/chip/Chip';
+import Chip from 'components/primitives/chip/Chip';
 import './BeerStats.scss';
-import { checkRange } from '../../../helpers/utils/BeerUtils';
+import { checkRange } from 'shared/utils/BeerUtils';
+import classNames from 'classnames';
 
 interface BeerStatsProps extends ComponentProps<'div'> {
   abv: number;
@@ -19,7 +20,7 @@ const BeerStats = ({ abv, ibu, className }: BeerStatsProps) => {
     const ibuRange = checkRange(IBU_FIRST_THRESHOLD, IBU_SECOND_THRESHOLD, ibu);
 
     return (
-      <div className={`beer-stats-container ${className ? className : ''}`}>
+      <div className={classNames('beer-stats-container', className)}>
         {abv !== null && <Chip label="ABV" className={abvRange} value={abv} />}
         {ibu !== null && <Chip label="IBU" className={ibuRange} value={ibu} />}
       </div>

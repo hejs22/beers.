@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react';
-import Beer from '../../../helpers/interfaces/Beer.interface';
+import Beer from 'shared/interfaces/Beer.interface';
 import './BeerTile.scss';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import appRouter from '../../../router/AppRouter';
-import { ROUTE } from '../../../constants/RouteConstants';
-import IconButton from '../../primitives/button/IconButton';
+import appRouter from 'router/AppRouter';
+import { ROUTE } from 'shared/constants/RouteConstants';
+import IconButton from 'components/primitives/button/IconButton';
 
 interface BeerTileProps extends ComponentProps<'div'> {
   beer: Beer;

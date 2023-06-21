@@ -13,9 +13,7 @@
     white-space: nowrap;
     gap: $spacing-xs;
 
-
     .ingredient {
-      font-weight: 500;
       background-color: rgba($primary-color, 0.1);
       display: flex;
       align-items: center;
@@ -24,6 +22,7 @@
       padding: $spacing-xs;
       border-radius: $border-radius-inner;
       font-size: $font-xs;
+      font-weight: 500;
     }
   }
 }

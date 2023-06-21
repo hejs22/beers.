@@ -1,12 +1,12 @@
 import './BeerDetails.scss';
-import Beer from '../../../helpers/interfaces/Beer.interface';
+import Beer from 'shared/interfaces/Beer.interface';
 import { ComponentProps } from 'react';
-import BeerStats from '../beer-stats/BeerStats';
-import BeerIngredientsList from '../beer-ingredients-list/BeerIngredientsList';
+import BeerStats from 'components/beer/beer-stats/BeerStats';
+import BeerIngredientsList from 'components/beer/beer-ingredients-list/BeerIngredientsList';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import appRouter from '../../../router/AppRouter';
-import { ROUTE } from '../../../constants/RouteConstants';
-import IconButton from '../../primitives/button/IconButton';
+import appRouter from 'router/AppRouter';
+import { ROUTE } from 'shared/constants/RouteConstants';
+import IconButton from 'components/primitives/button/IconButton';
 
 interface BeerDetailsProps extends ComponentProps<'div'> {
   beer: Beer;

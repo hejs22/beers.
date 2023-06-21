@@ -2,7 +2,7 @@ import { DATA_EMPTY_SRC, DATA_NOT_FOUND_SRC, ERROR_404_SRC } from './ImageConsta
 
 export class Error404 {
   static header = 'Nothing here.';
-  static caption = 'Apart from this cute dog. But seriously, this page does not exist.';
+  static caption = 'Just this cute dog. But seriously, this page does not exist.';
   static imageSrc = ERROR_404_SRC;
 }
 

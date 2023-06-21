@@ -1,12 +1,12 @@
-import BeerDetails from '../../components/beer/beer-details/BeerDetails';
+import BeerDetails from 'components/beer/beer-details/BeerDetails';
 import './BeerDetailsPage.scss';
 import { useEffect } from 'react';
-import { useBeer } from '../../helpers/hooks/useBeer';
-import Builder from '../../helpers/utils/Builder';
-import { DATA_NOT_FOUND_SRC } from '../../constants/ImageConstants';
-import ErrorMessage from '../../components/error-message/ErrorMessage';
-import appRouter from '../../router/AppRouter';
-import { ROUTE } from '../../constants/RouteConstants';
+import { useBeer } from 'shared/hooks/useBeer';
+import Builder from 'shared/utils/Builder';
+import { DATA_NOT_FOUND_SRC } from 'shared/constants/ImageConstants';
+import ErrorMessage from 'components/error-message/ErrorMessage';
+import appRouter from 'router/AppRouter';
+import { ROUTE } from 'shared/constants/RouteConstants';
 
 export const BeerDetailsPage = () => {
   const { data: beerDetails, status } = useBeer();
