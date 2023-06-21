@@ -42,11 +42,7 @@ export default class BeerTilePageObjects {
     return this.beerTileContainer.get('.beer-tagline');
   }
 
-  get seeDetailsButton() {
-    return this.beerTileContainer.get('.see-details-button');
-  }
-
   get seeDetails() {
-    return this.seeDetailsButton.click();
+    return this.beerTileContainer.click();
   }
 }

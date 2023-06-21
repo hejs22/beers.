@@ -40,14 +40,10 @@ describe('Testing <BeerTile/>', () => {
         .should('be.visible')
         .should('have.attr', 'src', BeerTilePO.MOCK_BEER.image_url);
     });
-
-    it(`should display 'see details' button`, () => {
-      BeerTilePO.seeDetailsButton.should('exist').should('be.visible');
-    });
   });
 
   describe('Testing actions', () => {
-    it(`should redirect to details page after 'see details' button click`, () => {
+    it(`should redirect to details page after clicking on tile`, () => {
       BeerTilePO.seeDetails;
       cy.location('pathname').should(
         'eq',
