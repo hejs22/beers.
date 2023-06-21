@@ -3,7 +3,7 @@
 
 .beer-details-container {
   margin: 0 auto;
-  @include tile();
+  @include tile;
   display: grid;
   grid-column-gap: $spacing-m;
   grid-template-columns: 1fr 2fr;
@@ -92,6 +92,7 @@
 
       .header-text {
         font-weight: 900;
+        word-break: break-word;
 
         &.beer-name {
           color: $accent-color;

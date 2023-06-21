@@ -1,4 +1,4 @@
-import Beer from '../../../helpers/interfaces/Beer.interface';
+import Beer from 'shared/interfaces/Beer.interface';
 
 export default class BeerDetailsPageObjects {
   public MOCK_BEER: Beer = {

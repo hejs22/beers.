@@ -1,8 +1,8 @@
-import Beer from '../../../helpers/interfaces/Beer.interface';
+import Beer from 'shared/interfaces/Beer.interface';
 import { mount } from 'cypress/react18';
 import BeerTile from './BeerTile';
 import BeerTilePageObjects from './BeerTilePageObjects';
-import { ROUTE } from '../../../constants/RouteConstants';
+import { ROUTE } from 'shared/constants/RouteConstants';
 
 const BeerTilePO = new BeerTilePageObjects();
 

@@ -1,4 +1,4 @@
-import { Range } from '../../../helpers/utils/BeerUtils';
+import { Range } from 'shared/utils/BeerUtils';
 
 export default class BeerStatsPageObjects {
   public MOCK_IBU_LOW = 3;

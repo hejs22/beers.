@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { SelectedPageContext } from '../../contexts/SelectedPageContext';
+import { SelectedPageContext } from 'shared/contexts/SelectedPageContext';
 import './PageSelector.scss';
-import IconButton from '../primitives/button/IconButton';
+import IconButton from 'components/primitives/button/IconButton';
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 interface PageSelectorProps {

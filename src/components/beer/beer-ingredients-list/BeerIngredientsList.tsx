@@ -1,6 +1,6 @@
 import './BeerIngredientsList.scss';
 import { ComponentProps, ReactElement } from 'react';
-import BeerIngredients from '../../../helpers/interfaces/BeerIngredients.interface';
+import BeerIngredients from 'shared/interfaces/BeerIngredients.interface';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWheatAlt, faBacteria, faBeer, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
@@ -11,19 +11,17 @@ interface BeerIngredientsListProps extends ComponentProps<'div'> {
 const BeerIngredientsList = ({ ingredients }: BeerIngredientsListProps) => {
   const buildHopsList = () => {
     return ingredients.hops.map((hop, id) => (
-      <div
-        className="ingredient"
-        key={
-          id + hop.name
-        }>{`${hop.name}, ${hop.amount.value} ${hop.amount.unit}, ${hop.attribute}`}</div>
+      <div className="ingredient" key={`${hop.name}:${id}`}>
+        {`${hop.name}, ${hop.amount.value} ${hop.amount.unit}, ${hop.attribute}`}
+      </div>
     ));
   };
 
   const buildMaltsList = () => {
     return ingredients.malt.map((malt, id) => (
-      <div
-        className="ingredient"
-        key={id + malt.name}>{`${malt.name}, ${malt.amount.value} ${malt.amount.unit}`}</div>
+      <div className="ingredient" key={`${malt.name}:${id}`}>
+        {`${malt.name}, ${malt.amount.value} ${malt.amount.unit}`}
+      </div>
     ));
   };
 
@@ -34,9 +32,8 @@ const BeerIngredientsList = ({ ingredients }: BeerIngredientsListProps) => {
   ) => {
     return (
       <div className="ingredients-row">
-        <b>
-          <FontAwesomeIcon icon={icon} /> {label}:
-        </b>
+        <FontAwesomeIcon icon={icon} />
+        <b>{label}:</b>
         {content}
       </div>
     );

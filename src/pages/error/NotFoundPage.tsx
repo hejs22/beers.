@@ -1,8 +1,8 @@
-import ErrorMessage from '../../components/error-message/ErrorMessage';
+import ErrorMessage from 'components/error-message/ErrorMessage';
 import './NotFoundPage.scss';
-import appRouter from '../../router/AppRouter';
-import { ROUTE } from '../../constants/RouteConstants';
-import { Error404 } from '../../constants/ErrorConstants';
+import appRouter from 'router/AppRouter';
+import { ROUTE } from 'shared/constants/RouteConstants';
+import { Error404 } from 'shared/constants/ErrorConstants';
 
 const NotFoundPage = () => {
   const navigateBack = () => {

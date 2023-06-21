@@ -1,19 +1,21 @@
 @import "src/styles/constants";
 
 .page-selector-container {
-  margin: $spacing-m auto $spacing-s;
-  width: fit-content;
   display: flex;
   align-items: center;
-  gap: $spacing-l;
-  background-color: $primary-color-light;
+  gap: $spacing-s;
+  width: fit-content;
+  margin: $spacing-m auto $spacing-s;
   border-radius: $border-radius-inner;
 
   .current-page {
+    width: calc(#{$font-xl} * 2);
+    padding: $spacing-s;
+    border-radius: $border-radius-outer;
+    background-color: $primary-color-light;
     color: $secondary-text-color;
-    width: $font-xxl;
     text-align: center;
     font-size: $font-xl;
-    font-weight: 900;
+    font-weight: 700;
   }
 }

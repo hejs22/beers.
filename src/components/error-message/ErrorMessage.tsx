@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 import './ErrorMessage.scss';
-import Button from '../primitives/button/Button';
+import Button from 'components/primitives/button/Button';
 
 interface ErrorMessageProps extends ComponentProps<'div'> {
   header: string;
