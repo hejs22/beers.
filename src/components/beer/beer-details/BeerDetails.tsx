@@ -13,13 +13,13 @@ interface BeerDetailsProps extends ComponentProps<'div'> {
 }
 
 const BeerDetails = ({ beer }: BeerDetailsProps) => {
-  const navigateBack = () => {
-    appRouter.navigate(ROUTE.BACK);
+  const navigateToHomePage = () => {
+    appRouter.navigate(ROUTE.HOME);
   };
 
   return (
     <div className="beer-details-container">
-      <IconButton icon={faArrowLeft} className="go-back-button" onClick={navigateBack} />
+      <IconButton icon={faArrowLeft} className="go-back-button" onClick={navigateToHomePage} />
       <div className="beer-picture-container">
         <div className="circle-background" />
         <img
