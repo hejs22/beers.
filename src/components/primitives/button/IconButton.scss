@@ -1,0 +1,9 @@
+@import "src/styles/constants";
+
+.icon-button-container {
+  border: none;
+  cursor: pointer;
+  padding: $spacing-m;
+  background-color: $tile-color;
+  border-radius: $border-radius-inner;
+}

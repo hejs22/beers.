@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { PulseLoader } from 'react-spinners';
 
 class Builder {
   private _status: string = 'loading';
@@ -6,7 +7,7 @@ class Builder {
   success: ReactElement = (<></>);
   error: ReactElement = (<></>);
   idle: ReactElement = (<></>);
-  loading: ReactElement = (<></>);
+  loading: ReactElement = (<PulseLoader cssOverride={{ margin: 'auto' }} />);
 
   constructor(status: string) {
     this._status = status;

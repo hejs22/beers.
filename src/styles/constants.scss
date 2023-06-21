@@ -4,6 +4,7 @@ $font-m: 1rem;
 $font-l: 1.125rem;
 $font-xl: 1.5rem;
 $font-xxl: 2.5rem;
+$font-xxxl: 3.5rem;
 
 $spacing-xs: 5px;
 $spacing-s: 10px;
@@ -11,9 +12,13 @@ $spacing-m: 15px;
 $spacing-l: 20px;
 $spacing-xl: 30px;
 
-$bg-color: #231e25;
-$bg-color-light: lighten($bg-color, 20%);
-$bg-color-dark: darken($bg-color, 20%);
+$primary-color: #2f2f2f;
+$primary-color-light: lighten($primary-color, 10%);
+$primary-color-dark: darken($primary-color, 10%);
+
+$accent-color: #d7004b;
+$accent-color-light: lighten($accent-color, 10%);
+$accent-color-dark: darken($accent-color, 10%);
 
 $text-color: #222;
 $secondary-text-color: #fff;
@@ -26,9 +31,28 @@ $sm-breakpoint: 576px;
 
 $max-content-width: 1200px;
 
-$tile-shadow: 0px 3px 10px 3px $bg-color-dark;
-$header-shadow: 0px 10px 10px 0px rgba($bg-color-dark, 0.15);
+$tile-shadow: 0px 3px 10px 3px $primary-color-dark;
+$header-shadow: 0px 10px 10px 0px rgba($primary-color-dark, 0.15);
 
 $border-radius-outer: 10px;
 $border-radius-inner: 5px;
 $border-radius-round: 500px;
+
+$navbar-height: 90px;
+
+$navbar-layer: 1000;
+$top-layer: 100;
+$middle-layer: 10;
+$bottom-layer: 1;
+
+@keyframes blink-animation {
+  0% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}

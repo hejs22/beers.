@@ -1,0 +1,29 @@
+@import "src/styles/constants";
+
+.beer-ingredients-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-m;
+  max-width: 100%;
+
+  .ingredients-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    gap: $spacing-xs;
+
+
+    .ingredient {
+      font-weight: 500;
+      background-color: rgba($primary-color, 0.1);
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      flex-wrap: wrap;
+      padding: $spacing-xs;
+      border-radius: $border-radius-inner;
+      font-size: $font-xs;
+    }
+  }
+}

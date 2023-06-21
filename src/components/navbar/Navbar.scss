@@ -2,13 +2,16 @@
 @import "src/styles/mixins";
 
 .navbar {
-  padding: $spacing-m;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: sticky;
   top: 0;
-  z-index: 10;
-  background-color: $bg-color;
+  z-index: $navbar-layer;
+  background-color: $primary-color-dark;
+  height: $navbar-height;
+  padding: $spacing-m;
+  box-sizing: border-box;
   transition: transform 0.3s;
   @include box-shadow($header-shadow);
 

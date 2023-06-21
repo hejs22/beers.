@@ -16,7 +16,10 @@ const AppRouter = createBrowserRouter([
     ),
     children: [
       { path: ROUTE.HOME, element: <HomePage /> },
-      { path: ROUTE.DETAILS, element: <BeerDetailsPage /> }
+      {
+        path: ROUTE.DETAILS,
+        element: <BeerDetailsPage />
+      }
     ]
   },
   { path: '*', element: <NotFoundPage /> }

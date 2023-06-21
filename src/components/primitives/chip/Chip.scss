@@ -1,28 +1,46 @@
 @import "src/styles/constants";
 
-.chip-container {
-  width: fit-content;
-  align-items: center;
-  display: inline-flex;
-  overflow: hidden;
-  border-radius: $border-radius-round;
-  background-color: rgba($text-color, 0.15);
-  padding-left: $spacing-xs;
-
-  .chip-label, .chip-value {
-    padding: $spacing-s;
-    font-weight: 600;
-    box-sizing: border-box;
-  }
+@mixin color($color) {
+  border: thin solid $color;
 
   .chip-label {
-    font-size: $font-xs;
-    background-color: $text-color;
-    color: $secondary-text-color;
-    border-radius: $border-radius-round;
+    background-color: $color;
+  }
+}
+
+.chip-container {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: $border-radius-inner;
+  overflow: hidden;
+
+  &.low {
+    @include color(#0ae176);
   }
 
-  .chip-value {
-    font-size: $font-s;
+  &.mid {
+    @include color(#f16500);
+  }
+
+  &.high {
+    @include color(#c30747);
+  }
+
+  .chip-text {
+    padding: $spacing-s;
+    font-weight: 600;
+
+    &.chip-label {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      color: $secondary-text-color;
+      font-weight: 700;
+    }
+
+    &.chip-value {
+      font-size: $font-s;
+    }
   }
 }
