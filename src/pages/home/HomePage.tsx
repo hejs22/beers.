@@ -10,8 +10,7 @@ import PageSelector from '../../components/page-selector/PageSelector';
 
 const HomePage = () => {
   const { page } = useContext(SelectedPageContext);
-  const { data, status, refetch } = useBeers(page);
-  const { data: nextData } = useBeers(page + 1);
+  const { data, status, refetch, nextData } = useBeers(page);
 
   return (
     <div className="home-page-container">
