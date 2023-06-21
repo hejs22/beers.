@@ -25,6 +25,7 @@ const BeerDetails = ({ beer }: BeerDetailsProps) => {
         onClick={navigateBack}
         aria-label="Go to previous page"
       />
+
       <div className="beer-picture-container">
         <div className="circle-background" />
         <img
@@ -35,6 +36,7 @@ const BeerDetails = ({ beer }: BeerDetailsProps) => {
         />
         <div className="since">{`Since ${beer.first_brewed}.`}</div>
       </div>
+
       <div className="beer-details">
         <div className="details-header">
           <div>

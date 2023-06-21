@@ -52,7 +52,7 @@
     .beer-picture {
       position: relative;
       z-index: $middle-layer;
-      max-height: 50vh;
+      max-height: max(50vh, 400px);
       max-width: 100%;
     }
   }

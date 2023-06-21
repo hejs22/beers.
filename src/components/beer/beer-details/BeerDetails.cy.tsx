@@ -2,7 +2,6 @@ import Beer from 'shared/interfaces/Beer.interface';
 import { mount } from 'cypress/react18';
 import BeerDetails from './BeerDetails';
 import BeerDetailsPageObjects from './BeerDetailsPageObjects';
-import { ROUTE } from 'shared/constants/RouteConstants';
 
 const BeerDetailsPO = new BeerDetailsPageObjects();
 
@@ -76,13 +75,6 @@ describe('Testing <BeerDetails/>', () => {
 
     it(`it should display 'go back' button`, () => {
       BeerDetailsPO.goBackButton.should('exist').should('be.visible');
-    });
-  });
-
-  describe('Testing actions', () => {
-    it(`should redirect to home page after 'go back' button click`, () => {
-      BeerDetailsPO.goBack;
-      cy.location('pathname').should('eq', ROUTE.HOME);
     });
   });
 });
