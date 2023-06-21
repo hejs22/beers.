@@ -15,7 +15,6 @@
 - Obsługę błędów przy fetchowaniu danych (a także obsługę sytuacji, w której zostanie pobrana pusta tablica).
 - Kilka testów, które w małym stopniu mogą zobrazować w jaki sposób je piszę.
 - Konfigurację środowiska (linter, ładniejsze importy, itd.)
-- Czytelny kod :)
 
 
 ## Dostępne skrypty
