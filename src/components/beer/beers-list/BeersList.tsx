@@ -16,7 +16,7 @@ const BeersList = ({ beers }: BeersContainerProps) => {
     const skeletons: ReactElement[] = [];
 
     for (let count = 0; count < DEFAULT_PAGE_SIZE; count++) {
-      skeletons.push(<div className="skeleton" />);
+      skeletons.push(<div key={`Skeleton id:${count}`} className="skeleton" />);
     }
 
     return skeletons;

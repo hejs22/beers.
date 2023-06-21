@@ -28,6 +28,7 @@ const BeerDetails = ({ beer }: BeerDetailsProps) => {
           alt={`Big picture of ${beer.name} beer.`}
           loading="eager"
         />
+        <div className="since">{`Since ${beer.first_brewed}.`}</div>
       </div>
       <div className="beer-details">
         <div className="details-header">
