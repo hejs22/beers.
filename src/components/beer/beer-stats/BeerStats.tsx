@@ -15,19 +15,15 @@ const IBU_FIRST_THRESHOLD = 30;
 const IBU_SECOND_THRESHOLD = 55;
 
 const BeerStats = ({ abv, ibu, className }: BeerStatsProps) => {
-  const buildBeerStats = () => {
-    const abvRange = checkRange(ABV_FIRST_THRESHOLD, ABV_SECOND_THRESHOLD, abv);
-    const ibuRange = checkRange(IBU_FIRST_THRESHOLD, IBU_SECOND_THRESHOLD, ibu);
+  const abvRange = checkRange(ABV_FIRST_THRESHOLD, ABV_SECOND_THRESHOLD, abv);
+  const ibuRange = checkRange(IBU_FIRST_THRESHOLD, IBU_SECOND_THRESHOLD, ibu);
 
-    return (
-      <div className={classNames('beer-stats-container', className)}>
-        {abv !== null && <Chip label="ABV" className={abvRange} value={abv} />}
-        {ibu !== null && <Chip label="IBU" className={ibuRange} value={ibu} />}
-      </div>
-    );
-  };
-
-  return buildBeerStats();
+  return (
+    <div className={classNames('beer-stats-container', className)}>
+      {abv !== null && <Chip label="ABV" className={abvRange} value={abv} />}
+      {ibu !== null && <Chip label="IBU" className={ibuRange} value={ibu} />}
+    </div>
+  );
 };
 
 export default BeerStats;

@@ -22,7 +22,7 @@ const BeersList = ({ beers }: BeersContainerProps) => {
     return skeletons;
   };
 
-  const mapBooleanToStatus = (): 'success' | 'loading' | 'error' => {
+  const createBuilderStatus = (): 'success' | 'loading' | 'error' => {
     if (!beers) {
       return 'loading';
     } else if (beers.length) {
@@ -38,7 +38,7 @@ const BeersList = ({ beers }: BeersContainerProps) => {
     }
   };
 
-  return Builder.createResult(mapBooleanToStatus())
+  return Builder.createResult(createBuilderStatus())
     .onLoading(<div className="beers-list-container">{buildSkeletons()}</div>)
     .onSuccess(<div className="beers-list-container">{buildBeerTiles()}</div>)
     .onError(
