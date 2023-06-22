@@ -1,6 +1,6 @@
 @import "src/styles/mixins";
 
 .beer-details-page-container {
-  @include page-container();
+  @include page-container;
   justify-content: center;
 }

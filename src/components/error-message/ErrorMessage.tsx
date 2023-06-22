@@ -22,7 +22,7 @@ const ErrorMessage = ({
       <div className="error-image-container">
         <img className="error-image" src={imageSrc} alt="Error message picture." />
       </div>
-      <div>
+      <div className="error-message-content">
         <div className="error-text error-header">{header}</div>
         <div className="error-text error-caption">{caption}</div>
         {buttonOnClick && buttonText && (

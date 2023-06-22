@@ -9,6 +9,7 @@
   grid-template-columns: 1fr 1fr;
 
   @media (max-width: $lg-breakpoint) {
+    justify-items: center;
     grid-template-columns: 1fr;
   }
 
@@ -21,26 +22,31 @@
     }
   }
 
-  .error-text {
-    color: $secondary-text-color;
+  .error-message-content {
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
 
-    &.error-header {
-      font-weight: 900;
-      font-size: $font-xxl;
+    .error-text {
+      color: $secondary-text-color;
+
+      &.error-header {
+        font-weight: 900;
+        font-size: $font-xxl;
+      }
     }
-  }
 
-  .action-button {
-    width: 100%;
-    margin-top: $spacing-m;
-    background-color: $accent-color;
-    color: $secondary-text-color;
-    font-size: $font-l;
-    font-weight: bold;
-    transition: background-color 0.2s;
+    .action-button {
+      margin-top: $spacing-m;
+      background-color: $accent-color;
+      color: $secondary-text-color;
+      font-size: $font-l;
+      font-weight: bold;
+      transition: background-color 0.2s;
 
-    &:hover {
-      background-color: $accent-color-dark;
+      &:hover {
+        background-color: $accent-color-dark;
+      }
     }
   }
 }
