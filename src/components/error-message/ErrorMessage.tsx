@@ -18,20 +18,20 @@ const ErrorMessage = ({
   buttonOnClick
 }: ErrorMessageProps) => {
   return (
-    <div className="error-message-container">
-      <div className="error-image-container">
+    <article className="error-message-container">
+      <section className="error-image-container">
         <img className="error-image" src={imageSrc} alt="Error message picture." />
-      </div>
-      <div className="error-message-content">
-        <div className="error-text error-header">{header}</div>
-        <div className="error-text error-caption">{caption}</div>
+      </section>
+      <section className="error-message-content">
+        <p className="error-text error-header">{header}</p>
+        <p className="error-text error-caption">{caption}</p>
         {buttonOnClick && buttonText && (
           <Button className="action-button" onClick={buttonOnClick}>
             {buttonText}
           </Button>
         )}
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

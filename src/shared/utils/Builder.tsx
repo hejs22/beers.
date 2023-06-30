@@ -1,19 +1,21 @@
 import { ReactElement } from 'react';
 import { PulseLoader } from 'react-spinners';
 
+export type BuilderStatus = 'success' | 'error' | 'loading' | 'idle';
+
 class Builder {
-  private _status: string = 'loading';
+  private _status: BuilderStatus = 'loading';
 
   success: ReactElement = (<></>);
   error: ReactElement = (<></>);
   idle: ReactElement = (<></>);
   loading: ReactElement = (<PulseLoader cssOverride={{ margin: 'auto' }} />);
 
-  constructor(status: string) {
+  constructor(status: BuilderStatus) {
     this._status = status;
   }
 
-  static createResult(status: string) {
+  static createResult(status: BuilderStatus) {
     if (!status || !status.length)
       throw new Error(
         "Status must be defined. Possible values: 'success', 'loading', 'idle', 'error'. Any other value will be treated as 'error'."

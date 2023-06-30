@@ -4,9 +4,9 @@ import Builder from 'shared/utils/Builder';
 import ErrorMessage from 'components/error-message/ErrorMessage';
 import { ErrorNoData } from 'shared/constants/ErrorConstants';
 import './HomePage.scss';
-import { useContext } from 'react';
-import { SelectedPageContext } from 'shared/contexts/SelectedPageContext';
 import PageSelector from 'components/page-selector/PageSelector';
+import { useContext } from 'react';
+import { SelectedPageContext } from '../../shared/contexts/SelectedPageContext';
 
 const HomePage = () => {
   const { page } = useContext(SelectedPageContext);
@@ -15,7 +15,7 @@ const HomePage = () => {
   return (
     <div className="home-page-container">
       <PageSelector hasNextPage={!!nextData?.length} />
-      <div className="home-page">
+      <section className="home-page">
         {Builder.createResult(status)
           .onSuccess(<BeersList beers={data} />)
           .onLoading(<BeersList beers={data} />)
@@ -29,7 +29,7 @@ const HomePage = () => {
             />
           )
           .build()}
-      </div>
+      </section>
       <PageSelector hasNextPage={!!nextData?.length} />
     </div>
   );
