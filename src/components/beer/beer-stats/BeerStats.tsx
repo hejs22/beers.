@@ -19,10 +19,10 @@ const BeerStats = ({ abv, ibu, className }: BeerStatsProps) => {
   const ibuRange = checkRange(IBU_FIRST_THRESHOLD, IBU_SECOND_THRESHOLD, ibu);
 
   return (
-    <div className={classNames('beer-stats-container', className)}>
+    <section className={classNames('beer-stats-container', className)}>
       {abv !== null && <Chip label="ABV" className={abvRange} value={abv} />}
       {ibu !== null && <Chip label="IBU" className={ibuRange} value={ibu} />}
-    </div>
+    </section>
   );
 };
 

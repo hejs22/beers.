@@ -9,10 +9,10 @@ interface ChipProps extends ComponentProps<'div'> {
 
 const Chip = ({ label, value, className }: ChipProps) => {
   return (
-    <div className={classNames('chip-container', className)}>
+    <section className={classNames('chip-container', className)}>
       <div className="chip-value chip-text">{value}</div>
       <div className="chip-label chip-text">{label}</div>
-    </div>
+    </section>
   );
 };
 

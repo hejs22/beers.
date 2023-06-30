@@ -1,8 +1,8 @@
-import { useContext } from 'react';
-import { SelectedPageContext } from 'shared/contexts/SelectedPageContext';
 import './PageSelector.scss';
 import IconButton from 'components/primitives/button/IconButton';
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { useContext } from 'react';
+import { SelectedPageContext } from '../../shared/contexts/SelectedPageContext';
 
 interface PageSelectorProps {
   hasNextPage: boolean;
@@ -10,14 +10,6 @@ interface PageSelectorProps {
 
 const PageSelector = ({ hasNextPage }: PageSelectorProps) => {
   const { page, setPage } = useContext(SelectedPageContext);
-
-  const incrementPage = () => {
-    setPage(page + 1);
-  };
-
-  const decrementPage = () => {
-    setPage(page - 1);
-  };
 
   const canDecrement = () => {
     return page > 1;
@@ -27,20 +19,24 @@ const PageSelector = ({ hasNextPage }: PageSelectorProps) => {
     return hasNextPage;
   };
 
+  const handlePageChange = (diff: number) => {
+    setPage && setPage((prev) => prev + diff);
+  };
+
   return (
     <div className="page-selector-container">
       <IconButton
         aria-label="Show previous page"
         disabled={!canDecrement()}
         icon={faAngleLeft}
-        onClick={decrementPage}
+        onClick={() => handlePageChange(-1)}
       />
-      <div className="current-page">{page}</div>
+      <b className="current-page">{page}</b>
       <IconButton
         aria-label="Show next page"
         disabled={!canIncrement()}
         icon={faAngleRight}
-        onClick={incrementPage}
+        onClick={() => handlePageChange(1)}
       />
     </div>
   );

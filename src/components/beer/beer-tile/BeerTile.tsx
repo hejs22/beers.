@@ -16,22 +16,22 @@ const BeerTile = ({ beer }: BeerTileProps) => {
   };
 
   return (
-    <div className="beer-tile-container" onClick={redirectToDetailsPage}>
-      <div className="beer-picture-container">
-        <div className="backdrop-text">{beer.name}</div>
+    <article className="beer-tile-container" onClick={redirectToDetailsPage}>
+      <section className="beer-picture-container">
+        <p className="backdrop-text">{beer.name}</p>
         <img
           src={beer.image_url}
           className="beer-picture"
           alt={`Picture of ${beer.name} beer.`}
           loading="lazy"
         />
-      </div>
+      </section>
 
-      <div className="beer-info">
-        <div className="beer-name">{beer.name}</div>
-        <div className="beer-tagline">{beer.tagline}</div>
-      </div>
-    </div>
+      <section className="beer-info">
+        <p className="beer-name">{beer.name}</p>
+        <p className="beer-tagline">{beer.tagline}</p>
+      </section>
+    </article>
   );
 };
 

@@ -22,7 +22,7 @@ export const BeerDetailsPage = () => {
   return (
     <div className="beer-details-page-container">
       {Builder.createResult(status)
-        .onSuccess(<BeerDetails beer={beerDetails} />)
+        .onSuccess(<>{beerDetails && <BeerDetails beer={beerDetails} />}</>)
         .onError(
           <ErrorMessage
             header="Oops!"
