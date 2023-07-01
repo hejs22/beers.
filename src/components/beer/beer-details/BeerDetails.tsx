@@ -39,10 +39,10 @@ const BeerDetails = ({ beer }: BeerDetailsProps) => {
 
       <section className="beer-details">
         <div className="details-header">
-          <div>
-            <p className="beer-tagline header-text">{beer.tagline}</p>
+          <section>
+            <h4 className="beer-tagline header-text">{beer.tagline}</h4>
             <h3 className="beer-name header-text">{beer.name}</h3>
-          </div>
+          </section>
           <BeerStats className="beer-stats" abv={beer.abv} ibu={beer.ibu} />
         </div>
         <p className="beer-description details-text">{beer.description}</p>
