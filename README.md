@@ -1,56 +1,53 @@
-# ExLabs - zadanie rekrutacyjne
+# Beers.
+Example technical task for junior frontend developer job.
 
-## Wymagania
-- Kiedy ładuje się treść, użytkownik powinien być tego świadomy (wyświetl spinner lub skeleton loader) - ✓
-- Aplikacja powinna być responsywna i działać na urządzeniach mobilnych - ✓
-- Podstrona z konkretnym piwem powinna być dostępna również poprzez URL np. `/details/:beerId` - ✓
-- Na stronie głównej piwa powinny zawierać minimum informacje takie jak zdjęcie, nazwa piwa oraz tagline (są to dane z API) - ✓
-- Dedykowana podstrona z piwem powinna zawierać minimum informacje takie jak zdjęcie, nazwa piwa, tagline, description, abv, ibu, ingredients (są to dane z API) - ✓
-- Powinniśmy móc uruchomić aplikację poprzez komendę `npm install && npm start` - ✓
+### Live demo
+https://hcywka-beers.netlify.app \
+
+## Requirements
+- When content is loading, user should be aware of that (display spinner or skeleton loader) - ✓
+- App should be responsive and work on mobiles - ✓
+- Beer details should also be available on another page, i.e. via URL `/details/:beerId` - ✓
+- Home page should contain at least beer name, tagline and picture of every beer - ✓
+- Beer details page should contain at least picture, name, tagline, description, abv, ibu, ingredients - ✓
+
+## Additional things I have done
+- Data prefetching,
+- Securing router, handling `404 - Page not found`.
+- Few tests in Cypress with usage of Page Objects pattern.
+- Environment configuration (linter, absolute imports, itd.)
 
 
-## Od siebie dorzuciłem
-- Prefetchowanie danych z api.
-- Zabezpieczenie routera, obsłużenie `404 - Page not found`.
-- Obsługę błędów przy fetchowaniu danych (a także obsługę sytuacji, w której zostanie pobrana pusta tablica).
-- Kilka testów, które w małym stopniu mogą zobrazować w jaki sposób je piszę.
-- Konfigurację środowiska (linter, ładniejsze importy, itd.)
-
-
-## Dostępne skrypty
+## Available scripts
 
 ### `npm install`
 
-Instaluje wszystko co potrzebne.
+Installs application.
 
 ### `npm start`
 
-Standardowo uruchamia aplikację w środowisku deweloperskim.\
-Po uruchomieniu dostępna jest pod adresem [http://localhost:3000](http://localhost:3000).
+Runs app in development environment.\
+It should be available at [http://localhost:3000](http://localhost:3000).
 
 ### `npm run build`
 
-Buduje aplikację i zapisuje do folderu `build`.
+Build app in production mode and saves it in `build` directory.
 
 ### `npm run cypress:component`
 
-Uruchamia napisane testy jednostkowe (jest ich kilka, chciałem pokazać swój koncept pisania testów oparty na wzorcu Page Objects).
+Runs unit tests.
 
-# Galeria
+# Gallery
 
-Główny widok aplikacji
+Main app view
 ![HomePage.png](github/HomePage.png)
 
-Informacje o danym piwie
+Specific beer details
 ![BeerDetails.png](github/BeerDetails.png)
 
-Widok dla ludzi robiących literówki w adresie url
+404 page
 ![404Page.png](github/404Page.png)
 
-Widok dla tych, co próbują wyszukiwać informacji o piwie, które nie istnieje
+Example of handling api error
 ![NotFound.png](github/NotFound.png)
 
-# Wersja live
-
-https://hcywka-beers.netlify.app \
-Miłego przeglądania i do usłyszenia :)
